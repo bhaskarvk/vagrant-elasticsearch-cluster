@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
     cluster_cpu = utils.get_cluster_info 'cluster_cpu'
     cluster_cpu = cluster_cpu.to_i
 
-    config.vm.box = 'chef/centos-7.1'
+    config.vm.box = 'bento/centos-7.1'
 
     # Virtualbox
     config.vm.provider 'virtualbox' do |vbox, override|
