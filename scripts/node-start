@@ -8,9 +8,9 @@ then
 else
     mkdir -p /vagrant/logs
 
-    rm -f elasticsearch/config/elasticsearch.yml
-    cp /vagrant/conf/elasticsearch-$VM_NAME.yml elasticsearch/config/elasticsearch.yml
-    chown vagrant: elasticsearch/config/elasticsearch.yml
+    rm -f elasticsearch/conf/elasticsearch.yml
+    cp /vagrant/conf/elasticsearch-$VM_NAME.yml elasticsearch/conf/elasticsearch.yml
+    chown vagrant: elasticsearch/conf/elasticsearch.yml
 
     screen -S elastic -d -m bash -l -c "su - vagrant -c \"ES_JAVA_OPTS='-Djava.net.preferIPv4Stack=true'  elasticsearch > /vagrant/logs/elasticsearch-$VM_NAME.log 2>&1\""
     echo "-----------------------------------------------------------------------------------------------------------"
